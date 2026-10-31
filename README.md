@@ -4,7 +4,7 @@ Graph-based forensic framework, built in **Neo4j**, that detects manipulation pa
 
 > Bachelor's thesis – BSc Management and Computer Science, LUISS Guido Carli (2024/2025), course of Cybercrime and Fraud Detection
 
-![Expanded wallet network](images/wallet_network.png)
+![Expanded wallet network](image/wallet_network.png)
 
 ## Key findings
 
@@ -26,6 +26,9 @@ Graph-based forensic framework, built in **Neo4j**, that detects manipulation pa
 3. **Trading-partner expansion** – top 5 counterparties of the 4 most active traders in a 90-day window, with transactions capped in proportion to activity and flagged as `synthetic`
 4. **Graph algorithms** – Neo4j Graph Data Science on directed and undirected wallet projections
 5. **Fraud modules** – rule-based scores (ZERO / LOW / MEDIUM / HIGH) for six patterns
+
+![Wallet holdings expansion in Neo4j](image/holdings_expansion.png)
+*Holdings expansion in Neo4j: NFT portfolios (orange) and collections (blue) around the wallets of the ownership chain (yellow)*
 
 ## Results
 
@@ -51,13 +54,16 @@ Graph-based forensic framework, built in **Neo4j**, that detects manipulation pa
 
 ### Fraud detection modules
 
+![Graph patterns used in NFT forensics](image/fraud_patterns.png)
+*Patterns the modules look for: (a) hub wallet, (b) bridge nodes connecting clusters, (c) closed loop – circular trading, (d) collusive cluster*
+
 | Module | Rule | Baseline | Expanded |
 |---|---|---|---|
 | Wash trading | Same token back and forth between two wallets, high risk within 24 h | ZERO | **HIGH** (transfers less than 1 h apart) |
 | Circular trading | Directed loops of 3–6 wallets (3–5 in the expanded network) | ZERO | **HIGH** for 5 wallets |
 | Volume inflation | Many trades with few partners in a short window (1 h baseline, 6 h expanded) | LOW | LOW for Trader2, otherwise ZERO |
 | Bot activity | Sub-minute gaps between a wallet's transactions | ZERO | **HIGH** for Trader2, MEDIUM for 3 wallets |
-| Coordinated trading | Several wallets trading in the same 15-minute window | LOW | **HIGH** for 2 wallets (8 events each) |
+| Coordinated trading | Several wallets trading in the same 15-minute window at similar (simulated) prices | LOW | **HIGH** for 2 wallets (8 events each) |
 | Pump and dump | Rise > 30% then drop > 25% with few wallets | tested only on simulated prices | ZERO |
 
 ## Data and anonymization
@@ -84,7 +90,7 @@ The anonymized files reproduce the **wallet network exactly** (21 wallets, 26 di
 │   ├── 06_expanded_analysis.cypher         # statistics and GDS algorithms (expanded network)
 │   └── 07_expanded_fraud_detection.cypher  # fraud modules on the expanded network
 ├── data/                                   # anonymized CSV files for Neo4j /import
-├── images/
+├── image/
 └── README.md
 ```
 
