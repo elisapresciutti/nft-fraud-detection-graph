@@ -1,0 +1,12 @@
+wallet,platform,handle,url,confidence
+w_initialowner,OpenSea,redacted_01,,4
+w_trader2,OpenSea,redacted_02,,4
+w_trader3,OpenSea,redacted_03,,4
+w_trader3,Twitter,redacted_04,,3
+w_trader4,OpenSea,redacted_05,,4
+w_trader4,ENS,redacted_06,,4
+w_trader4,Twitter,redacted_07,,5
+w_trader5,OpenSea,redacted_08,,4
+w_trader5,ENS,redacted_09,,4
+w_trader5,Twitter,redacted_10,,2
+w_currentowner,OpenSea,redacted_11,,4

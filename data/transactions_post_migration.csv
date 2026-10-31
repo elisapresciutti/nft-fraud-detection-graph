@@ -1,0 +1,7 @@
+tx_hash,from_wallet,to_wallet,token_id,timestamp,platform,type
+tx_046,0x0000000000000000000000000000000000000000,w_initialowner,3600,2023-04-22 02:37:35,airdrop,mint
+tx_042,w_initialowner,w_trader2,3600,2025-03-29 01:19:11,direct_transfer,transfer
+tx_047,w_trader2,w_trader3,3600,2025-03-29 12:44:35,OpenSea,transfer
+tx_048,w_trader3,w_trader4,3600,2025-04-01 00:50:11,OpenSea,transfer
+tx_049,w_trader4,w_trader5,3600,2025-08-07 15:11:35,OpenSea,transfer
+tx_050,w_trader5,w_currentowner,3600,2025-08-07 22:40:23,direct_transfer,transfer

@@ -1,0 +1,8 @@
+address,alias,ens,type
+0x0000000000000000000000000000000000000000,MintSource,,minter
+w_initialowner,InitialOwner,,collector
+w_trader2,Trader2,,trader
+w_trader3,Trader3,,trader
+w_trader4,Trader4,,trader
+w_trader5,Trader5,,trader
+w_currentowner,CurrentOwner,,collector
